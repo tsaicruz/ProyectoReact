@@ -1,0 +1,44 @@
+.header {
+    background-color: rgba(255, 179, 209, 0.774);
+
+    .headerContainer {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .headerLogo {
+            max-width: 100px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            .link1 {
+                color: white;
+                font-size: 18px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            .link2 {
+                color: white;
+                font-size: 18px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            .link3 {
+                color: white;
+                font-size: 18px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+    }
+}
