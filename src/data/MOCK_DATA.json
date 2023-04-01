@@ -3,7 +3,7 @@
         "id": 1,
         "nombreAlimento": "Quinapril",
         "descripcion": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
-        "stock": 86,
+        "stock": 6,
         "precio": 4853,
         "img": "http://dummyimage.com/200x200.png/ff4444/ffffff",
         "categoria": "aves"
@@ -269,5 +269,4 @@
         "img": "http://dummyimage.com/200x200.png/dddddd/000000",
         "categoria": "aves"
     }
-
 ]

@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter , Routes , Route} from "react-router-dom";
 import { Footer } from "./components/Footer/Footer.js";
 import { Navigate } from "react-router-dom";
+import Nosotros from "./components/Nosotros/Nosotros";
+import Contacto from "./components/Contacto/Contacto";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
@@ -19,8 +21,8 @@ function App() {
       <Route path="/" element={<ItemListContainer/>}/> 
       <Route path="/productos/:categoriaId" element={<ItemListContainer/>}/> 
       <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/> 
-      <Route path="/productos/nosotros" element={<ItemListContainer/>}/> 
-      <Route path="/productos/contacto" element={<ItemListContainer/>}/> 
+      <Route path="/nosotros" element={<Nosotros/>}/> 
+      <Route path="/contacto" element={<Contacto/>}/> 
       <Route path="*" element={<Navigate to="/"/>}/>
       
       </Routes>
