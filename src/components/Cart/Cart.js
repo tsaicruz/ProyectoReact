@@ -1,12 +1,24 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import {BsFillTrashFill} from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 const Cart = () => {
  const {cart ,totalCompra, vaciarCarrito, eliminarDelCarrito} = useContext(CartContext)
 
-    return (
+    if(cart.length === 0 ) {
+        return (
             <div className= "container my-5">
+                <h2>No tenes productos agregados</h2>
+                <hr/>
+                <Link to="/" className="btn btn-primary"> Volver </Link>
+            </div> 
+        )
+    }
+
+
+         return(
+            <div className="container my-5">
                 <h2> Tu compra </h2>
                 <hr/>
         {
@@ -19,14 +31,15 @@ const Cart = () => {
                     <p> Precio Total : ${prod.precio * prod.stock}</p> 
                     <button onClick={ () => { eliminarDelCarrito(prod.id)}} className="btn btn-danger"><BsFillTrashFill/></button>
                     <hr/>                    
-                     </div>
-            )   )
+                </div>
+            ))
         }
                 <h3>Total : ${totalCompra().toFixed(2)}</h3>
                 <button onClick={vaciarCarrito} className="btn btn-danger"> Vaciar Carrito</button>
-
             </div>
-    )
-}
+
+         )
+    }
+
 
 export default Cart 

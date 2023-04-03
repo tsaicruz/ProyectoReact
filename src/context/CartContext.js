@@ -6,8 +6,7 @@ export const CartContext = createContext()
 export const CartProvider = ( {children} ) => {
 
     const [cart,setCart] = useState([])
-    console.log(cart)
-  
+
     const agregarAlCarrito = (item) => {
       setCart([...cart, item])
     }
@@ -33,7 +32,7 @@ export const CartProvider = ( {children} ) => {
     }
 
     const eliminarDelCarrito = (id) => {
-        setCart(cart.filter((prod) => prod.id != id))
+        setCart(cart.filter((prod) => prod.id !== id))
     }
 
     return (
