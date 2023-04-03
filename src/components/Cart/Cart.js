@@ -10,18 +10,17 @@ const Cart = () => {
                 <h2> Tu compra </h2>
                 <hr/>
         {
-            cart.map((prod) => {
+            cart.map((prod) => (
                 <div key={prod.id}>
                     <h4>{prod.nombreAlimento}</h4>
-                    <img src={prod.img} alt={prod.nombreAlimento}/>/
-                     <small> Precio Unitario : ${prod.precio}</small>
-                    <small> Cantidad : {prod.cantidad}</small>
+                    <img src={prod.img} alt={prod.nombreAlimento}/>
+                    <p> Precio Unitario : ${prod.precio}</p>
+                    <p> Cantidad : {prod.cantidad} </p>
                     <p> Precio Total : ${prod.precio * prod.stock}</p> 
                     <button onClick={ () => { eliminarDelCarrito(prod.id)}} className="btn btn-danger"><BsFillTrashFill/></button>
-                    <hr/>
-                    
+                    <hr/>                    
                      </div>
-            })
+            )   )
         }
                 <h3>Total : ${totalCompra().toFixed(2)}</h3>
                 <button onClick={vaciarCarrito} className="btn btn-danger"> Vaciar Carrito</button>
