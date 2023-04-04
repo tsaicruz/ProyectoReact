@@ -7,7 +7,7 @@ import { LoginContext } from '../../context/LoginContext'
 
 
 export const Navbar = () => {
-    const { user,logOut} = useContext(LoginContext)
+    const { user,logout} = useContext(LoginContext)
 
     return (
             <header className="header">
@@ -28,7 +28,7 @@ export const Navbar = () => {
             </div>
             <div className='login'>
                 <h6> Bienvenido {user.email}</h6>
-                <button className='btn btn-danger' onClick={logOut}> Cerrar sesion </button>
+                <button className='btn btn-danger' onClick={logout}> Cerrar sesion </button>
             </div>
             </header>
     )

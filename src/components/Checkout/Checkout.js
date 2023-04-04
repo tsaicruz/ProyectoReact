@@ -72,9 +72,7 @@ const Checkout = () => {
                 setOrderId(doc.id)
                 vaciarCarrito()
             })
-
     }
-
 
     if (orderId) {
         return (

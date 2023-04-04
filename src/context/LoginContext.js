@@ -1,52 +1,71 @@
-import { createContext, useState } from "react";
+import { signOut, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import { auth, provider } from "../firebase/config";
+
 
 export const LoginContext = createContext()
 
 
-const MOCK_USERS = [
-    {
-        id:1,
-        email: 'admin@admin.com',
-        password: 'admin'
-
-    }
-]
-
-
-export const LoginProvider = ({children}) =>{
-    const [user,setUser] = useState({
+export const LoginProvider = ({children}) => {
+    const [user, setUser] = useState({
         email: null,
-        logged: false
+        logged: false,
+        uid: null
     })
-    // console.log(user)
 
-    const tryLogin = (values) => {
-        const match = MOCK_USERS.find((user) => user.email === values.email) 
-
-        if(match && match.password === values.password) {
-            setUser({
-                logged: true,
-                email: match.email
+    const googleLogin = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                console.log(result)
             })
-        }
     }
 
-    const logOut = () => {
-        setUser({
-            email:null,
-            logged: false
-        })
+    const login = (values) => {
+        signInWithEmailAndPassword(auth, values.email, values.password)
+            .catch((err) => console.log(err))
     }
+
+    const register = (values) => {
+        createUserWithEmailAndPassword(auth, values.email, values.password)
+            .catch((err) => console.log(err.message))
+    }
+
+    const logout = () => {
+        signOut(auth)
+            .then(() => {
+                setUser({
+                    email: null,
+                    logged: false,
+                    uid: null
+                })
+            })
+    }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log(user)
+                setUser({
+                    email: user.email,
+                    logged: true,
+                    uid: user.uid
+                })
+            } else {
+                logout()
+            }
+        })
+    }, [])
 
 
     return (
-        <LoginContext.Provider value= {{
+        <LoginContext.Provider value={{
             user,
-            tryLogin,
-            logOut
+            register,
+            login,
+            logout,
+            googleLogin
         }}>
-             {children}
+            {children}
         </LoginContext.Provider>
-    ) 
-
+    )
 }

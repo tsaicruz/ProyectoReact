@@ -1,5 +1,6 @@
 import LoginScreen from "../components/LoginScreen/LoginScreen";
 import { Route, Routes , Navigate} from "react-router-dom";
+import RegisterScreen from "../components/RegisterScreen/RegisterScreen";
 
 
 const PublicRoutes = () => {
@@ -9,6 +10,7 @@ const PublicRoutes = () => {
         
         <Routes>
               <Route path="/login" element={<LoginScreen/>}/>
+              <Route path="/register" element={<RegisterScreen/>} />
               <Route path ="*" element={<Navigate to="/login" /> } />
             </Routes>        
         </>

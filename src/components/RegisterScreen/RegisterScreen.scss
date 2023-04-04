@@ -1,0 +1,16 @@
+.register-screen { 
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vh;
+    height: 100vh;
+
+
+    .register{
+        width: 500px;
+        pad: 26px;
+        border-radius: 10px;
+        background-color: white;
+    }
+}
