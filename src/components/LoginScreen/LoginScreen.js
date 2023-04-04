@@ -3,7 +3,7 @@ import './LoginScreen.scss'
 import { LoginContext } from '../../context/LoginContext'
 
 const LoginScreen = () => {
-    const {user, tryLogin} = useContext(LoginContext)
+    const {tryLogin} = useContext(LoginContext)
     
 
 
