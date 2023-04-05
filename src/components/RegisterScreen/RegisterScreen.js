@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { LoginContext } from '../../context/LoginContext'
 import './RegisterScreen.scss'
 
+// Arreglar el register
+
 
 
 const RegisterScreen = () => {
