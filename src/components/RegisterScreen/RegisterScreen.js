@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 import { LoginContext } from '../../context/LoginContext'
 import './RegisterScreen.scss'
 
-// Arreglar el register
-
-
 
 const RegisterScreen = () => {
     const { register } = useContext(LoginContext)
@@ -54,7 +51,6 @@ const RegisterScreen = () => {
                     <button className='btn btn-primary' type='submit'>Crear usuario</button>
                     <Link to="/login">Ya estoy registrado, logearme</Link>
                 </form>
-
             </div>
         </div>
     )
