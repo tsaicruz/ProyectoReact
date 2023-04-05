@@ -2,7 +2,6 @@ import { signOut, createUserWithEmailAndPassword, onAuthStateChanged, signInWith
 import { createContext, useEffect, useState } from "react";
 import { auth, provider } from "../firebase/config";
 
-
 export const LoginContext = createContext()
 
 

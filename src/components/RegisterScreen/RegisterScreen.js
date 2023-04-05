@@ -25,8 +25,9 @@ const RegisterScreen = () => {
     }
 
     return (
-        <div className='login-screen'>
-            <div className='login'>
+        <div className='register-background'>
+        <div className='register-screen'>
+            <div className='register'>
                 <h2>Registrarse</h2>
                 <hr/>
 
@@ -47,11 +48,13 @@ const RegisterScreen = () => {
                         placeholder='Password'
                         name='password'
                     />
-
-                    <button className='btn btn-primary' type='submit'>Crear usuario</button>
-                    <Link to="/login">Ya estoy registrado, logearme</Link>
+                    <div className='buttons'>
+                    <button className='btn btn-primary' type='submit'>Crear usuario</button>                    
+                    <Link to="/login" className='btn btn-primary '>Ya estoy registrado</Link>
+                    </div>
                 </form>
             </div>
+        </div>
         </div>
     )
 }

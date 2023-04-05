@@ -26,7 +26,7 @@ const LoginScreen = () => {
     }
 
     return (
-        <div className='login-screen'>
+        <div className='login-background'>
             <div className='login'>
                 <h2>Login</h2>
                 <hr/>
@@ -47,13 +47,13 @@ const LoginScreen = () => {
                         className='form-control my-3'
                         placeholder='Password'
                         name='password'
-                    />
-
-                    <button className='btn btn-primary' type='submit'>Login</button>
-                    <Link to="/register">Registrarme</Link>
+                    />                    
                 </form>
-
-                <button className='btn btn-outline-primary' onClick={googleLogin}>Logearme con Google</button>
+                <div className='buttons'>
+                <button className='btn btn-primary' type='submit'>Login</button>
+                <button className='btn btn-primary' onClick={googleLogin}>Logearme con Google</button>
+                </div>
+                <Link to="/register">Registrarme</Link>                
             </div>
         </div>
     )

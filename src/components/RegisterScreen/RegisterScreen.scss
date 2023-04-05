@@ -1,16 +1,29 @@
-.register-screen { 
-    background-color: pink;
+.register-background {
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vh;
     height: 100vh;
+}
 
+.register {
+    opacity: 100%;
+    background-color: rgba(255, 255, 255, 0.616);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+    margin: 30px;
+    border-radius: 10%;
+}
 
-    .register{
-        width: 500px;
-        pad: 26px;
-        border-radius: 10px;
-        background-color: white;
-    }
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
 }
