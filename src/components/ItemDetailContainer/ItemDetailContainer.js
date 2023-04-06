@@ -4,6 +4,7 @@ import { db } from "../../firebase/config"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { doc, getDoc } from "firebase/firestore"
 
+
 const ItemDetailContainer = () => {
 
 
@@ -29,7 +30,7 @@ useEffect(() => {
         })
         .finally(() => setLoading(false))
 
-}, [])
+}, [itemId])
 
 
     return(
